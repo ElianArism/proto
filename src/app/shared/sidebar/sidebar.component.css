@@ -1,0 +1,40 @@
+.sidebar {
+    margin-right: 20px;
+    width: 100%;
+}
+.logo-title h2 {
+    text-align: center;
+}
+
+.option {
+    list-style: none;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"] + label {
+    font-size: 20px;
+}
+
+input[type="checkbox"]:checked + label {
+    color: blue;
+}
+
+@media screen and (max-width:1000px) {
+    .logo-title h2 {
+        font-size: 18px;
+    }
+    
+    input[type="checkbox"] + label {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .sidebar {
+        display: none;
+    }
+}

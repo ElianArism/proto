@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global CSS Files */
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400&display=swap');
+
+body {
+    background-color: #dddddd;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}

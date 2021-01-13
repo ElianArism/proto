@@ -1,0 +1,129 @@
+.container-main-c {
+    width: 100%;
+    height: 100%;
+}
+.main-container {
+    display: flex;
+}
+
+.main-item {
+    border: 1px solid black;
+    height: 27em;
+    margin: 5em auto;
+    width: 40%;   
+}
+
+.main-item {
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    transition: all 500ms;
+}
+
+.main-item:hover {
+    cursor: pointer;
+    transition: all 500ms;
+    transform: scale(1.1);
+    -webkit-box-shadow: 1px -6px 23px 3px rgba(0,0,0,0.28); 
+    box-shadow: 1px -6px 23px 3px rgba(0,0,0,0.28);
+    text-decoration: underline 2px wheat;
+}
+
+.main-item:first-child {
+    background-image: url('../../../assets/img/1.png');
+    background-position: initial;
+}
+
+.main-item:last-child {
+    background-image: url('../../../assets/img/2.png');
+    background-position: center;
+}
+
+.main-item-link {
+    align-items: center;
+    color: wheat;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    font-weight: bold; 
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.social-content {
+    background: rgb(255,87,127);
+    background: linear-gradient(90deg, rgba(255,87,127,1) 7%, rgba(230,112,52,1) 100%);
+    display: flex;
+}
+
+.social {
+    color: wheat;
+    display: flex;
+    font-size: 36px;
+    font-family: 'Amatic SC', cursive;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    text-decoration: underline 1px wheat;
+}
+.social-items {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+}
+
+.social-item i{
+    color: wheat;
+}
+
+.social-map {
+    border-radius: 10px;
+    display: block;
+    height: 400px;
+    margin: 20px auto;
+    width: 40%;
+}
+
+@media screen and (max-width: 1100px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .main-item:first-child {
+        background-image: url('../../../assets/img/1.png');
+        background-position: center;
+    }
+    
+    .main-item {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    
+    .main-item:first-child {
+        background-image: url('../../../assets/img/1.png');
+        background-position: center;
+    }
+   .social-content {
+       flex-direction: column;
+       height: max-content;
+   }
+   .social .social-items {
+       margin-bottom: 70px;
+   }
+   .social-content .social > h3 {
+       margin-bottom: 10px;
+   }
+
+   .social-map {
+       width: 90%;
+       height: 500px;
+   }
+}

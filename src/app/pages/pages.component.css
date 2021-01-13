@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    grid-template-columns: 15% repeat(11, 1fr);
+    grid-template-rows:  1fr 3fr 1fr; 
+    grid-auto-flow: row;
+    height: 100%;
+    width: 100%;
+}
+
+.header, .footer {
+    background-color: #f16363;
+    color: whitesmoke;    
+    grid-column: 1/-1;
+}
+
+.header {
+    grid-row: 1/2;
+}
+
+.content {
+    background-color: #f1f8ff; 
+    grid-column: 1 / -1;
+    grid-row:  auto;
+}
+
+.footer {
+    grid-row: 3 / 4;
+}

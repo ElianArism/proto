@@ -1,0 +1,39 @@
+li {
+    list-style: none;  
+    margin: 20px; 
+}
+
+.card {
+    border: 1px solid wheat;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 500ms;
+    width: 100%;
+}
+
+.card:hover {
+    transition: all 500ms;
+    transform: scale(1.02);
+    -webkit-box-shadow: 1px -6px 23px 3px  rgba(153, 152, 152, 0.28); 
+    box-shadow: 1px -6px 23px 3px rgba(153, 152, 152, 0.28);
+
+}
+
+.card-img img {
+    height: 210px;
+    width: 100%;
+}
+.card-title {
+    font-size: 18px;
+    padding-left: 20px;
+}
+.card-hr {
+    border-bottom: rgba(179, 175, 175, 0.664) 1px solid;
+    width: 80%;
+
+}
+.card-price {
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 20px;
+}

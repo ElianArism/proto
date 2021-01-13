@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    width: 100%;
+}
+.footer-container {
+    display: flex;
+}
+
+.footer-signature {
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    text-align: center;
+    width: 50%;
+}
+
+.footer-social {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.footer-item {
+    color: wheat;
+    font-size: 32px;   
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.my-signature-container {
+    width: 100%;
+}
+
+.my-signature {
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: 560px) {
+    .footer-social {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .footer-item {
+        font-size: 18px;
+    }
+}

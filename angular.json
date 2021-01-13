@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fzIndumentaria"
+    }
+  },
+  "defaultProject": "fzIndumentaria",
+  "cli": {
+    "analytics": "08deb77e-492b-4abd-b280-6cf265941e0c"
+  }
 }
