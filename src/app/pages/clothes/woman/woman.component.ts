@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./woman.component.css']
 })
 export class WomanComponent implements OnInit {
-
-  constructor() { }
+  public menu: Array<any> = []; 
+  public show: string = 'block';
+  
+  constructor() {
+    this.menu = ['Remeras', 'Camisas', 'Tops', 'Jeans', 'Vestidos', 'Shorts'];
+  }
 
   ngOnInit(): void {
   }
-
 }

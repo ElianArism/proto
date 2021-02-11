@@ -1,0 +1,22 @@
+<section class="container">
+    <article class="container-add-size">
+        <form class="form-add-size" [formGroup]="formSizes" (ngSubmit)="addSize()">
+            <label for="size" class="label-size">Nuevo talle:</label>
+            <input type="text" name="size" class="form-size-input" formControlName="size">
+            <button type="submit">Agregar nuevo talle</button>
+        </form>
+    </article>
+    
+    <article class="container-table-of-sizes">
+        
+        <ul class="table-of-sizes">
+           <p class="table-of-sizes-title">Talles actuales: </p>
+           <li class="size-item" *ngFor="let s of sizesList">
+                <input class="item-name" [value]="s.size" #size>
+                <span class="item-actions">
+                    <i class="far fa-edit" (click)="updateSize(s, size.value)"></i><i class="far fa-trash-alt" (click)="deleteSize(s)"></i>
+                </span>
+            </li>
+        </ul>
+    </article>
+</section>

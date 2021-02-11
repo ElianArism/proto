@@ -1,0 +1,17 @@
+<header class="header">
+    <nav class="navbar">
+        <ul class="navbar-items-container">
+            <li><a class="navbar-item effect-hover" routerLink="/auth/maintenance/">Inicio</a></li>
+            <li><a class="navbar-item effect-hover" routerLink="/auth/maintenance/add-clothes">Agregar prenda</a></li>
+            <li><a class="navbar-item effect-hover" routerLink="/auth/maintenance/sizes-zone">Administrar talles</a></li>
+            <li><a class="navbar-item effect-hover" routerLink="/auth/maintenance/admin-config">Configuración de usuarios</a></li>
+            <li><a class="navbar-item effect-hover" (click)="logout()" style="cursor: pointer;">Salir</a></li>
+        </ul>
+
+        <div class="navbar-logo">
+            <h3>Fz Indumentaria</h3>
+        </div>
+    </nav>
+ 
+    <input  class="search" type="text" placeholder="Buscar prenda">    
+</header>

@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
+  public socialF:string = 'https://www.facebook.com/Fz-Indumentaria-110139507365445';
+  public socialI:string = 'https://www.instagram.com/fz__indumentariaok/';
+  public socialW:string = 'https://api.whatsapp.com/send?phone=+5493624569607"';
+  public socialG:string = 'mailto:fzindumentariaarg@gmail.com';
   constructor() { }
+
 
   ngOnInit(): void {
   }

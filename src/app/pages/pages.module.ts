@@ -6,18 +6,18 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
 
 import { MainComponent } from './main/main.component';
-import { ClothesComponent } from './clothes/clothes.component';
 import { MenComponent } from './clothes/men/men.component';
 import { WomanComponent } from './clothes/woman/woman.component';
 import { PagesComponent } from './pages.component';
+import { ClothesDetailsComponent } from './clothes/clothes-details/clothes-details.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     MainComponent,
-    ClothesComponent,
     MenComponent,
-    WomanComponent
+    WomanComponent,
+    ClothesDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -28,9 +28,9 @@ import { PagesComponent } from './pages.component';
   exports: [
     PagesComponent,
     MainComponent,
-    ClothesComponent,
     MenComponent,
     WomanComponent,
+    ClothesDetailsComponent
   ]
 })
 export class PagesModule { }

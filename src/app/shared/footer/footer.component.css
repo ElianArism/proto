@@ -1,11 +1,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%; 
-    width: 100%;
 }
 .footer-container {
     display: flex;
+    margin-top: 20px;
 }
 
 .footer-signature {
@@ -31,6 +30,7 @@
 
 .my-signature-container {
     width: 100%;
+    margin: 20px auto;
 }
 
 .my-signature {
@@ -38,13 +38,13 @@
     text-align: center;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 900px) {
     .footer-social {
         display: flex;
         flex-direction: row;
-        
     }
     .footer-item {
+        margin: auto;
         font-size: 18px;
     }
 }

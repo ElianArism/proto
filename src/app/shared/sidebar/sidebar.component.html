@@ -1,18 +1,47 @@
-<aside class="sidebar">    
-    
+<aside class="sidebar">       
     <nav class="nav">
         <div class="logo">
             <div class="logo-title">
                 <h2>Tipo de producto</h2>
+                <hr>
             </div>
         </div>    
 
         <!-- cargar menu  -->
 
         <ul class="filter-options-list">
-            <li *ngFor="let o of menu; let i = index;" class="option">
-                <input type="checkbox" [name]="'name'+i" class="check"><label [for]="'name'+i" class="label">{{o}}</label>
-            </li>
+            <div>
+                <p class="title-options">Marca</p>
+                <hr class="line">
+               
+                <ul>
+                    <li *ngFor="let o of filterMenu.brand; let i = index" class="option">
+                        <input type="checkbox" [name]="'option'+i" [value]="o"><label [for]="'option'+i"> {{o}}</label>
+                    </li>
+                </ul>
+            </div>
+        
+            <div>
+                <p class="title-options">Tipo de prenda</p>
+                <hr class="line">
+                
+                <ul>
+                    <li *ngFor="let o of filterMenu.type; let i = index" class="option">
+                        <input type="checkbox" [name]="'option'+i" [value]="o"><label [for]="'option'+i"> {{o}}</label>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <p class="title-options">Tamaño</p>
+                <hr class="line">
+        
+                <ul class="filter-sizes">
+                    <li *ngFor="let o of filterMenu.sizes; let i = index" class="option-sizes">
+                        <input type="checkbox" [name]="'option'+i" [value]="o"><label [for]="'option'+i"> {{o}}</label>
+                    </li>
+                </ul>
+            </div>
         </ul>
     </nav>
 </aside>

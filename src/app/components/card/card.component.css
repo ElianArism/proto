@@ -9,6 +9,7 @@ li {
     cursor: pointer;
     transition: all 500ms;
     width: 100%;
+    max-width: 330px;
 }
 
 .card:hover {
@@ -30,10 +31,14 @@ li {
 .card-hr {
     border-bottom: rgba(179, 175, 175, 0.664) 1px solid;
     width: 80%;
+    margin: auto;
 
 }
 .card-price {
     font-weight: bold;
     font-size: 20px;
     padding-left: 20px;
+}
+.card-price, .card-title {
+    margin: 10px 0;
 }

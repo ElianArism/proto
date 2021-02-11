@@ -1,14 +1,7 @@
 <article class="container">
-    
-    <button class="nav-mobile-activate-menu">
-        FILTROS
-    </button>
-    
-    <aside class="sidebar">
-        
-        <app-sidebar></app-sidebar>
 
-        <hr class="v">
+    <aside class="sidebar">
+        <app-filter [show]="''" class="filter" style="transition: all 500ms;"></app-filter>
     </aside>
 
     <ul class="items-container">

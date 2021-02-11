@@ -1,0 +1,43 @@
+<article class="container">
+    <div class="col_h">
+        Imagen
+    </div>
+    <div class="col_h">
+        Marca
+    </div>
+    <div class="col_h">
+        Tipo
+    </div>
+    <div class="col_h">
+        Genero
+    </div>
+    <div class="col_h">
+        Stock
+    </div>
+    <div class="col_h">
+        Talles
+    </div>
+    <div class="col_h">
+        Precio
+    </div>
+    <div class="col_h">
+        Acciones
+    </div>
+ 
+
+    <div class="tbody" *ngFor="let c of data">
+        <div class="col">
+            <img [src]="c.img">
+        </div>
+        <div class="col">{{c.brand}}</div>
+        <div class="col">{{c.type}}</div>
+        <div class="col">{{c.gender}}</div>
+        <div class="col">{{c.stock}}</div>
+        <ul class="col sizes">
+            <li *ngFor="let s of c.sizes" [class]="s.avaible ? 'avaible' : '' ">{{s.size}}</li>
+        </ul>
+        <div class="col">{{ c.price | currency:'AR$' }}</div>
+        <div class="col"><i class="far fa-edit"></i>  <i class="far fa-trash-alt"></i></div>
+    </div>
+
+</article>

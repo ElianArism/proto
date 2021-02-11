@@ -2,29 +2,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ClothesComponent } from './clothes/clothes.component';
 import { MainComponent } from './main/main.component';
 import { MenComponent } from './clothes/men/men.component';
 import { WomanComponent } from './clothes/woman/woman.component';
+import { ClothesDetailsComponent } from './clothes/clothes-details/clothes-details.component';
 
 const routes: Routes = [
   {
-    path: '', component: MainComponent 
+    path: '', component: MainComponent , data: {title: 'Inicio'}
   },
   {
-    path: 'main', component: MainComponent 
+    path: 'main', component: MainComponent , data: {title: 'Principal'}
   },
   {
-    path: 'clothes', component: ClothesComponent
+    path: 'clothes/man', component: MenComponent, data: {title: 'Ropa - Hombre'}
   },
   {
-    path: 'clothes/man', component: MenComponent
-  },
+    path: 'clothes/woman', component: WomanComponent, data: {title: 'Ropa - Mujer'}
+  }, 
   {
-    path: 'clothes/woman', component: WomanComponent
+    path: 'clothes/detail/1', component: ClothesDetailsComponent, data: {title: 'Ropa - Detalles'}
   }
-  
-  
 ];
 
 @NgModule({
