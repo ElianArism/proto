@@ -1,16 +1,13 @@
+import { Sizes, Brand, Type, Img } from './management-crud.interface';
+
 export default interface Clothes {
-    img: string, 
+    img?: Img, 
     name: string, 
-    brand: string, 
-    type: string, 
-    gender: string, 
+    brand: Brand, 
+    type: Type, 
+    gender: string[], 
     stock: number, 
     sizes: Array<Sizes>, 
-    price: number
-}
-
-export interface Sizes {
-    _id: string;
-    size: string;
-    avaible: boolean;
+    price: number, 
+    active?: boolean
 }

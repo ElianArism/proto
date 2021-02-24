@@ -32,6 +32,23 @@
     width: 80%;
 }
 
+.input-img-container {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-img img {
+    margin: auto 30px;
+    border-radius: 20px; 
+}
 .input-label {
     font-size: 30px;
     font-weight: bold;
@@ -49,12 +66,22 @@ input:first-of-type {
     border: none;
 }
 
-.select-sex {
+.select {
     border: none;
     border-radius: 10px;
     font-size: 20px;
     padding: 14px;
 }
+
+.select:focus {
+    border: none;
+    outline: none;
+}
+
+.select:focus, .select:hover {
+    cursor: pointer;
+}
+
 
 .sizes-list {
     display: flex;
@@ -76,16 +103,24 @@ input:first-of-type {
 
 
 button[type="submit"] {
-    background: linear-gradient(90deg, rgba(255,87,127,1) 7%, rgba(230,112,52,1) 100%);
     border: none;
     border-radius: 10px;
     color: white;
-    cursor: pointer;
     font-size: 18px;
     margin: 20px 0;
     padding: 15px;
 }
 
-button[type="submit"]:hover {
+.btn-enable {
+    background: linear-gradient(90deg, rgba(255,87,127,1) 7%, rgba(230,112,52,1) 100%);
+    cursor: pointer;
+    
+}
+
+.btn-enable:hover {
     background: linear-gradient(90deg, rgb(245, 72, 112) 7%, rgb(255, 115, 45) 100%);
+}
+
+.btn-disabled {
+    background-color: #ccc !important;
 }

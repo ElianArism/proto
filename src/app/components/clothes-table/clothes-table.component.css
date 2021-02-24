@@ -1,16 +1,19 @@
 .container {
-    width: 90%;
+    width: 100%;
 }
+
 .container, .tbody {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     margin: auto;
 }
 .col_h {
     border-top: 1px solid #ccc;
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
+    margin: auto;
     text-align: center;
+    width: 220px;
 }
 
 
@@ -32,15 +35,19 @@
 .col {
     font-family: Roboto, sans-serif;
     text-align: center;
+    margin: auto;
 }
 
 .tbody:last-child {
     border-bottom: 1px solid #ccc;    
 }
+
 .sizes {
-    list-style: none;
     display: flex;
     justify-content: space-between;
+    list-style: none;
+    margin: auto;
+    width: 220px;
 }
 
 .sizes li {

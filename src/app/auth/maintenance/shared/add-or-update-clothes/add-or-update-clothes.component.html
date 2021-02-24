@@ -1,0 +1,68 @@
+<article class="container">
+    <div class="form-container">
+        <p class="title">{{mode === 'add' ? 'Agregar una prenda' : clothesRef ? 'Actualizar Prenda' : 'Cargando...'}}</p>
+        
+        <form 
+            class="form-add-update" 
+            [formGroup]="formClothes" 
+            (ngSubmit)="(mode === 'add') ? addClothes() : updateClothes()" 
+            enctype="multipart/form-data"
+        >
+            <div class="input-img-container">
+                <div>
+                    <label class="input-label" for="img">Imagen: </label>
+                    <input name="img" type="file"  accept="image/png, .jpeg, .jpg" (change)="setImg($event.target.files[0])">
+                </div>
+                <div *ngIf="clothesRef" class="modal-img">
+                    <label class="input-label">Imagen actual: </label>
+                    <a [href]="clothesRef.img.path" target="_blank" rel="noopener noreferrer"><img [src]="clothesRef.img.path" style="width:200px; height:200px;"></a>
+                </div>
+            </div>
+            
+
+            <label class="input-label" for="name">Nombre: </label>
+            <input name="name" type="text" formControlName="name">
+            
+            <label class="input-label" for="brand">Marca: </label>
+            <select class="select" name="brand" formControlName="brand">
+                <option [value]="b._id" *ngFor="let b of brandsList">{{b.name}}</option>
+            </select>
+            
+            <label class="input-label" for="type">Tipo: </label>
+            <select class="select" name="type" formControlName="type">
+                <option [value]="t._id" *ngFor="let t of typesList">{{t.type}}</option>
+            </select>    
+            
+            <label class="input-label" for="stock">Stock: </label>
+            <input name="stock" type="text" formControlName="stock">
+            
+            <label class="input-label" for="price">Precio: </label>
+            <input name="price" type="text" formControlName="price">
+            
+            <label class="input-label" for="sex">Sexo: </label>
+            <select class="select" name="sex" id="" formControlName="gender" >
+                <option value="null"></option>
+                <option value="man">Hombre</option>
+                <option value="woman">Mujer</option>
+                <option value="both">Ambos</option>
+            </select>
+            
+            <label class="input-label" for="sizes">Seleccione los talles disponibles:</label>
+            <ul class="sizes-list">
+                <div class="container-size" *ngFor="let s of sizesList; let i = index">
+                    <input type="checkbox" [value]="s._id" name="sizes" (change)="onCheckChange($event)" class="checkbox" #size><label [for]="'sizes'+1">{{s.size}}</label>
+                </div>
+            </ul>
+          
+            <button 
+                [class]="formClothes.invalid ? 'btn-disabled' : 'btn-enable'"
+                type="submit" 
+                [disabled]="formClothes.invalid"
+            >
+                {{mode === 'add' ? 'Agregar prenda' : 'Actualizar Prenda'}}
+            </button>
+        </form>
+    </div>
+
+    <!-- a la hora de agregar una prenda hay q verificar que no exista todavia -->
+</article>

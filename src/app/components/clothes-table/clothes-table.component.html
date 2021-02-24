@@ -3,6 +3,9 @@
         Imagen
     </div>
     <div class="col_h">
+        Nombre
+    </div>
+    <div class="col_h">
         Marca
     </div>
     <div class="col_h">
@@ -21,23 +24,28 @@
         Precio
     </div>
     <div class="col_h">
+        Estado
+    </div>
+    <div class="col_h">
         Acciones
     </div>
  
 
-    <div class="tbody" *ngFor="let c of data">
+    <div class="tbody" *ngFor="let c of clothesDB">
         <div class="col">
-            <img [src]="c.img">
+            <img [src]="c.img.path">
         </div>
-        <div class="col">{{c.brand}}</div>
-        <div class="col">{{c.type}}</div>
+        <div class="col">{{c.name}}</div>
+        <div class="col">{{c.brand.name}}</div>
+        <div class="col">{{c.type.type}}</div>
         <div class="col">{{c.gender}}</div>
         <div class="col">{{c.stock}}</div>
         <ul class="col sizes">
-            <li *ngFor="let s of c.sizes" [class]="s.avaible ? 'avaible' : '' ">{{s.size}}</li>
+            <li *ngFor="let s of c.sizes" [class]="s.avaible ? 'avaible' : '' ">{{s.size}} </li>
         </ul>
         <div class="col">{{ c.price | currency:'AR$' }}</div>
-        <div class="col"><i class="far fa-edit"></i>  <i class="far fa-trash-alt"></i></div>
+        <div class="col">{{ c.active ? 'Prenda disponible' : 'Prenda desactivada' }}</div>
+        <div class="col"><i class="far fa-edit" (click)="updateClothes(c)"></i>  <i class="far fa-trash-alt" (click)="deleteClothes(c)"></i></div>
     </div>
 
 </article>

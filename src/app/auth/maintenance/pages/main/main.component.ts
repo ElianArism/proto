@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SearchEngineService } from 'src/app/services/search-engine.service';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  public searchMode: boolean;
+  
+  constructor(private _searchEngineService: SearchEngineService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this._searchEngineService.getSearchMode()
+      .subscribe((mode) => {
+        this.searchMode = mode;
+      })
   }
-
 }

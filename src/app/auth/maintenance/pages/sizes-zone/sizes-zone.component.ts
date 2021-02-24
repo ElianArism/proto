@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SizesService } from '../../../../services/sizes.service';
-import { Sizes } from '../../../../interfaces/clothes.interface';
+import { Sizes } from '../../../../interfaces/management-crud.interface';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -8,6 +8,8 @@ import { CardComponent } from './card/card.component';
 import { FormComponent } from './form-login/form.component';
 import { ClothesTableComponent } from './clothes-table/clothes-table.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { EnumComponent } from '../shared/enum/enum.component';
+import { SearchEngineComponent } from './search-engine/search-engine.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
     FormComponent,
     ClothesTableComponent,
     FilterComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    EnumComponent,
+    SearchEngineComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
     CardComponent,
     FormComponent,
     ClothesTableComponent,
-    FilterComponent
+    FilterComponent,
+    EnumComponent,
+    SearchEngineComponent
+
   ]
   
 })

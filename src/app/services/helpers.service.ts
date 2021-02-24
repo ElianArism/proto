@@ -17,7 +17,6 @@ export class HelpersService {
     sizes: ['S', 'M', 'L', 'X', 'XXL'],
   }
  
-
   constructor( private _router: Router) {}
 
   get Filter(): Filter {

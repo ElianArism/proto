@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Sizes } from '../interfaces/clothes.interface';
+import { Sizes } from '../interfaces/management-crud.interface';
 import { HelpersService } from './helpers.service';
 import { Observable } from 'rxjs';
 

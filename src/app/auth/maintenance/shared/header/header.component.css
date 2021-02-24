@@ -15,7 +15,7 @@
 .navbar .navbar-items-container {
     display: flex;
     list-style: none;  
-    width: 50%;
+    width: 95%;
 }
 
 .navbar .navbar-items-container .navbar-item {
@@ -36,18 +36,8 @@
     text-align: end;
 }
 
-
-.search {
-    background-color: white;
-    border: none;
-    border-radius: 7px;
-    margin:  0 auto 20px auto;
-    padding: 20px;
-    width: 80%;
-}
-
-.search, .navbar-item {
-    font-size: 26px;
+.navbar-item {
+    font-size: 20px;
 }
 
 .effect-hover {

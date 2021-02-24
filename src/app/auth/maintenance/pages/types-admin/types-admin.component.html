@@ -1,0 +1,21 @@
+<section class="container">
+    <article class="container-add">
+        <form class="form-add" [formGroup]="formTypes" (ngSubmit)="addType()">
+            <label for="type" class="label-form">Nuevo tipo de prenda:</label>
+            <input type="text" name="type" class="form-input" formControlName="type">
+            <button type="submit">Agregar nuevo tipo de prenda</button>
+        </form>
+    </article>
+    
+    <article class="container-table">
+        <ul class="table">
+           <p class="table-title">Tipos de prenda actuales: </p>
+           <li class="table-item" *ngFor="let t of typesList">
+                <input class="item-name" [value]="t.type" #type>
+                <span class="item-actions">
+                    <i class="far fa-edit" (click)="updateType(t, type.value)"></i><i class="far fa-trash-alt" (click)="deleteType(t)"></i>
+                </span>
+            </li>
+        </ul>
+    </article>
+</section>

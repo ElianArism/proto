@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
     SidebarComponent,
     FooterComponent,
     NotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule
@@ -19,7 +19,7 @@ import { HeaderComponent } from './header/header.component';
   exports: [
     SidebarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ]
 })
 export class SharedModule { }

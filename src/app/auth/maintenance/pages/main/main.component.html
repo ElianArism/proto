@@ -1,4 +1,6 @@
 <main class="main-maintenance">
+    <app-search-engine></app-search-engine>   
+    
     <h2 class="title">Administración de Fz Indumentaria</h2>
     
     <div class="filter">
@@ -6,13 +8,6 @@
     </div>
 
     <app-clothes-table class="list-clothes"></app-clothes-table>
-
-    <!-- componente -->
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-    </ul>
+    
+    <app-enum *ngIf="!searchMode"></app-enum>
 </main> 

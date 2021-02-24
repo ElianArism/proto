@@ -1,8 +1,8 @@
 export const data = {
     img: '../../../assets/img/img-tests.jpg', 
     name: 'Lacoste FX PLUS', 
-    brand: 'Lacoste', 
-    type: 'Bermuda', 
+    brand: {_id: '1', name: 'hola', avaible: true }, 
+    type: {_id: '1', type: 'hola', sex: [''] }, 
     gender: 'Male', 
     stock: 12, 
     sizes: [
@@ -35,14 +35,3 @@ export const data = {
 
     price: 3000
 }
-
-export const usersExample = [
-  {
-    email: 'test@gmail.com',
-    password: '123123'
-  },
-  {
-    email: 'mara@test.com',
-    password: '123123'
-  }
-]

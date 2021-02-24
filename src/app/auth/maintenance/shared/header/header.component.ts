@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Router, ActivationEnd } from '@angular/router';
-import { filter, map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 import { HelpersService } from '../../../../services/helpers.service';
 import { AdminService } from '../../../../services/admin.service';
 

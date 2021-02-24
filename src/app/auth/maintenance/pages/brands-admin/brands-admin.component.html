@@ -1,0 +1,21 @@
+<section class="container">
+    <article class="container-add">
+        <form class="form-add" [formGroup]="formBrand" (ngSubmit)="addBrand()">
+            <label for="brand" class="label-form">Nueva Marca:</label>
+            <input type="text" name="brand" class="form-input" formControlName="name">
+            <button type="submit">Agregar nueva Marca</button>
+        </form>
+    </article>
+    
+    <article class="container-table">
+        <ul class="table">
+           <p class="table-title">Marcas actuales: </p>
+           <li class="table-item" *ngFor="let b of brandsList">
+                <input class="item-name" [value]="b.name" #size>
+                <span class="item-actions">
+                    <i class="far fa-edit" (click)="updateBrand(b, size.value)"></i><i class="far fa-trash-alt" (click)="deleteBrand(b)"></i>
+                </span>
+            </li>
+        </ul>
+    </article>
+</section>

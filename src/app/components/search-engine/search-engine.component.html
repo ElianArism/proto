@@ -1,0 +1,3 @@
+<input  class="search" type="text" placeholder="Buscar prenda" (keyup.enter)="searchEngine(inputSearch.value)" #inputSearch> 
+<input  type="button" *ngIf="searchMode" class="btn-cancel-search" value="Cancelar busqueda" (click)="cancelSearch()">
+    
