@@ -8,7 +8,8 @@
 .form label {
     color: #ffffff;
     font-family: 'Amatic SC', cursive;
-    font-size: 48px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .form input {
@@ -16,13 +17,14 @@
     border-radius: 4px;
     margin: 10px 0; 
     padding: 30px;
+    font-size: 16px;
 }
 
 .form input[type="submit"] {
     background-color: #f16363;
     color: white;
     font-family: 'Amatic sc', cursive;
-    font-size: 36px;
+    font-size: 16px;
     margin: 20px 0;
     transition: transform 500ms;
 }
@@ -42,16 +44,12 @@ input:focus, input.form-control:focus {
 }
 
 .recover-password {
-    color: wheat;
+    background-color:  rgb(255, 199, 96);
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     margin: 20px auto;
     text-decoration: none;
-}
-
-@media screen and (max-width: 500px) {
-
-    .form input[type="submit"], .form label {
-        font-size: 28px;
-    }
 }

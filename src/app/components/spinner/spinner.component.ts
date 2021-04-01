@@ -1,15 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-spinner',
+  selector: 'app-spinner-2',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })
-export class SpinnerComponent implements OnInit {
-  @Input() active: boolean;
+export class SpinnerComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

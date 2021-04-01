@@ -9,20 +9,8 @@ import { ActivationEnd, Router } from '@angular/router';
 })
 
 export class HelpersService {
-  public filter: Filter = {
-    brand: ['Lacoste', 'Gucci', 'Polo', 'Honkey Tonk'], 
-    type: ['Remera', 'Vestido', 'Jean', 'Camisa', 'Calza', 'Top'],
-    // gender se implementa a nivel API como query params pero no esta visible como filtro en vista
-    // gender: ['Hombre', 'Mujer'], 
-    sizes: ['S', 'M', 'L', 'X', 'XXL'],
-  }
- 
-  constructor( private _router: Router) {}
 
-  get Filter(): Filter {
-    return this.filter;
-    
-  }
+  constructor( private _router: Router) {}
 
   getRouterData() : Observable<any> {
     return this._router.events

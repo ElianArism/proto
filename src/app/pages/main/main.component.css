@@ -1,19 +1,24 @@
 .container-main-c {
-    width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-rows: minmax(650px,90%) minmax(400px,10%);
+    grid-template-areas: 
+        "main main main"
+        "social social social"
+    ;
 }
+
 .main-container {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-area: main;
 }
 
 .main-item {
     border: 1px solid black;
-    height: 27em;
-    margin: 5em auto;
+    height: 70%;
     width: 40%;   
-}
-
-.main-item {
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,21 +38,24 @@
 }
 
 .main-item:first-child {
-    background-image: url('../../../assets/img/1.png');
-    background-position: initial;
+    background-image: url('https://res.cloudinary.com/did5yztix/image/upload/c_scale,h_854/v1616187905/1_uvzw95.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .main-item:last-child {
-    background-image: url('../../../assets/img/2.png');
-    background-position: center;
+    background-image: url('https://res.cloudinary.com/did5yztix/image/upload/v1616187953/2_qzxk3g.jpg');
+    background-size: cover;
+    background-position: start;
 }
 
 .main-item-link {
     align-items: center;
-    color: wheat;
+    color: rgb(77, 72, 64);
+    letter-spacing: 2px;
     font-family: 'Amatic SC', cursive;
-    font-size: 40px;
-    font-weight: bold; 
+    font-size: 26px;
+    font-weight: bolder; 
     display: flex;
     height: 100%;
     justify-content: center;
@@ -56,74 +64,122 @@
 }
 
 .social-content {
-    background: rgb(255,87,127);
     background: linear-gradient(90deg, rgba(255,87,127,1) 7%, rgba(230,112,52,1) 100%);
     display: flex;
+    grid-area: social;
 }
 
 .social {
+    margin: 0 auto 0 auto;
+    width: 40%;
+    height: 100%;
     color: wheat;
     display: flex;
-    font-size: 36px;
+    font-size: 18px;
     font-family: 'Amatic SC', cursive;
     flex-direction: column;
-    height: auto;
-    margin: auto;
     text-decoration: underline 1px wheat;
+    align-items: center;
+    justify-content: center;
 }
+
 .social-items {
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 100%;
+    width: 90%;
+    justify-content: space-evenly;
 }
 
 .social-item i{
     color: wheat;
+    transition: transform 300ms;
+}
+
+.social-item i:hover {
+    transition: transform 300ms;
+    transform: scale(1.3);
 }
 
 .social-map {
     border-radius: 10px;
     display: block;
-    height: 400px;
-    margin: 20px auto;
+    height: 90%;
+    margin: auto;
     width: 40%;
 }
 
 @media screen and (max-width: 1100px) {
+    .container-main-c {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 600px 300px;
+        grid-template-areas: 
+        "main main"
+        "social social";
+        grid-auto-flow: row;
+    }
+
     .main-container {
-        flex-direction: column;
+        grid-area: main;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .main-item:first-child {
-        background-image: url('../../../assets/img/1.png');
         background-position: center;
     }
-    
+
     .main-item {
-        width: 80%;
+        height: 50%;
+        width: 40%;
+    }
+
+    .social-content {
+        grid-area: social;
+    }
+    .social, .main-item-link {
+        font-size: 16px;
     }
 }
 
-@media screen and (max-width: 560px) {
-    
-    .main-item:first-child {
-        background-image: url('../../../assets/img/1.png');
-        background-position: center;
+@media screen and (max-width: 400px) {
+    .container-main-c {
+        grid-template-columns: 1fr;
+        grid-template-rows: 600px 400px;
+        grid-auto-rows: 1fr;
+        grid-template-areas: 
+        "main"
+        "social";
+        grid-auto-flow: row;
     }
+    
+    .main-container { 
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-item {
+        width: 80%;
+        margin: 20px auto;
+    }
+
    .social-content {
        flex-direction: column;
-       height: max-content;
    }
-   .social .social-items {
-       margin-bottom: 70px;
+   .social {
+       width: 90%;
+       justify-content: space-evenly;
+
    }
+   .social-items {
+       margin: 20px auto;
+   }
+
    .social-content .social > h3 {
-       margin-bottom: 10px;
+       margin: 10px auto;
    }
 
    .social-map {
        width: 90%;
-       height: 500px;
+       height: 100%;
+       margin: 50px auto;
    }
 }

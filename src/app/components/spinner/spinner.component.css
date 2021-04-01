@@ -1,5 +1,5 @@
 .sk-folding-cube {
-  height: 300px;
+  height: 200px;
   margin: 20px auto;
   
   /* center */
@@ -12,7 +12,7 @@
   transform: rotateZ(45deg);
   
   position: absolute;
-  width: 300px;
+  width: 200px;
   z-index: 100;
 }
 

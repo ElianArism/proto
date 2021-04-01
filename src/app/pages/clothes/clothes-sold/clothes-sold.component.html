@@ -1,0 +1,17 @@
+<div class="container-clothes-sold">
+    <article class="card-clothes-sold">
+        <img [src]="!clothesRef ? '' : clothesRef.img.path" class="card-img">
+        
+        <div class="card-body">
+            <p class="card-title">Se realizó la compra de: </p>
+            <p class="card-title">{{ clothesRef ? clothesRef.name : '' }} {{ clothesRef ? clothesRef.type.type : ''}}  satisfactoriamente.</p>
+            <p class="card-price">Por el precio de: {{ clothesRef ? "AR$ " + clothesRef.price : '' }}.</p>
+        
+            <button class="btn-back" routerLink="/home">Regresar a la tienda</button>
+        </div>
+
+        
+    </article>
+
+</div>
+

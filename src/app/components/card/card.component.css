@@ -1,15 +1,13 @@
 li {
-    list-style: none;  
-    margin: 20px; 
+    list-style: none; 
 }
 
 .card {
-    border: 1px solid wheat;
-    border-radius: 5px;
     cursor: pointer;
     transition: all 500ms;
-    width: 100%;
-    max-width: 330px;
+    width: 60%;
+    max-width: 210px;
+    margin: 20px auto;
 }
 
 .card:hover {
@@ -21,24 +19,49 @@ li {
 }
 
 .card-img img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 210px;
     width: 100%;
 }
-.card-title {
-    font-size: 18px;
-    padding-left: 20px;
-}
-.card-hr {
-    border-bottom: rgba(179, 175, 175, 0.664) 1px solid;
-    width: 80%;
-    margin: auto;
 
-}
-.card-price {
-    font-weight: bold;
-    font-size: 20px;
+.card-title {
+    font-size: 14px;
     padding-left: 20px;
 }
+
+.card-info {
+    background: linear-gradient(90deg, rgba(255,87,127,1) 7%, rgba(230,112,52,1) 100%);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
+
+.card-hr {
+    border-bottom: white .5 solid;
+    margin: auto;
+    width: 80%;
+}
+
+.card-price {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
 .card-price, .card-title {
     margin: 10px 0;
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .card {
+        width: 60%;
+        max-width: none;
+    }
 }

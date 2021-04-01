@@ -14,7 +14,7 @@ export class ImgUploadService {
     
     const formData = new FormData(); 
     formData.append('img', img); 
-
+    console.log(img);
     try {
       const res = await fetch(
         this.url, 
@@ -32,7 +32,6 @@ export class ImgUploadService {
       if(data.ok) { 
         return data;
       } else {
-        console.log(data); 
         return Swal.fire('Error', '', 'error');
       }
     } catch (error) {

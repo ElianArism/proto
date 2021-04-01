@@ -1,21 +1,24 @@
 .container {
-    width: 100%;
+    margin: auto;
+    width: 90%;
+    font-size: 14px;
+    border: 1px solid gray;
 }
 
 .container, .tbody {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    margin: auto;
+    grid-template-columns: repeat(5, 0.5fr) 3fr repeat(3, 0.5fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 .col_h {
-    border-top: 1px solid #ccc;
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    margin: auto;
     text-align: center;
-    width: 220px;
+    font-size: 16px;
+    font-family: 'Amatic SC', cursive;
+    margin: 0 auto;
 }
-
 
 .col img {
     border-radius: 2px;
@@ -25,17 +28,14 @@
 }
 
 .tbody {
-    align-items: center;
+    text-align: center;
     border-top: 1px solid #ccc;
     grid-column: 1/-1;
-    text-align: center;
     width: 100%;
 }
 
 .col {
     font-family: Roboto, sans-serif;
-    text-align: center;
-    margin: auto;
 }
 
 .tbody:last-child {
@@ -44,14 +44,15 @@
 
 .sizes {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
-    margin: auto;
-    width: 220px;
 }
 
 .sizes li {
-    margin: auto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1.5px solid salmon;
+    margin: auto 10px;
 }
 
 .sizes .avaible {
@@ -61,7 +62,7 @@
 }
 
 .col i {
-    font-size: 22px;
+    font-size: 14px;
     margin: 0 20px;
     cursor: pointer;
 }

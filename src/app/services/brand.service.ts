@@ -18,6 +18,9 @@ export class BrandService {
     return this._httpClient.get(`${this.url}/brands`)
       .pipe(
         map((res:{ok: boolean, brands: any[]}) => {
+          res.brands = res.brands.map(b => {
+            return {active: false, ...b};
+          });
           return res.brands;
         })
       ); 

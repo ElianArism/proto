@@ -1,20 +1,23 @@
 .nav {
     display: flex;
-}
-
-.logo {
-    display: flex;
-    width: 20%;
-    flex-wrap: wrap;
-}
-
-.logo-title, .social {
-    font-size: 16px;
-    font-family: 'Amatic SC', cursive;
-    margin: auto;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    padding: 10px;
+}
+
+.logo-title a, .social {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 5px;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+.social {
+    margin-top: 7px;
+}
+.hidden {
+    display: none !important;
 }
 
 .search-form {
@@ -26,7 +29,8 @@
 .input-text, .input-submit {
     display: block;
     border: none;
-    padding: 20px;
+    font-size: 14px;
+    padding: 15px;
 }
 
 .input-text {
@@ -35,38 +39,29 @@
     width: 100%;
 }
 
+.input-text-readonly {
+    color: #ccc;
+}
+
 .input-submit {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 1px solid #ccc;
-    margin-right: 20px;
-    padding: 20px;
+    padding: 10px;
+    cursor: pointer;
 }
 
-.social {
-    font-size: 28px;
-}
-
-@media screen and (max-width: 700px) {
-    .nav {
-        font-size: 12px;
-    }
-
-    .logo-title h1 {
-        font-size: 18px;
-    }
-    
-    .search-form {
-        margin: 20px auto;
-    }
-
-    .social {
+@media screen and (max-width: 1200px) {
+    .logo-title h1 a, .social {
         font-size: 16px;
     }
 
+    .search-form {
+        margin: 20px auto;
+    }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 400px) {
     .nav {
         display: flex;
         flex-direction: column;
@@ -77,12 +72,15 @@
     .logo {
         order: 1;
         width: 50%;
+        margin: none;
     }
+
     .search-form {
         order: 3;
     }
+    
     .social {
+        margin-bottom: 10px;
         order: 2;
-        width: 50%;
     }
 }

@@ -1,0 +1,31 @@
+<div [class]="toggle ? 'toggle-off' : 'container'" >
+    <a class="btn" (click)="toggleOnOff()"><i class="fas fa-bars"></i></a>
+</div>
+<div [class]="toggle ? 'toggle fadeIn' : 'toggle-off fadeOut'">
+    <div class="sidebar-container">
+        <a class="btn-close" (click)="toggleOnOff()"><i class="fas fa-times"></i></a>  
+         
+        <p class="sidebar-title">Filtros</p>
+        
+        <hr class="sidebar-title-line">
+        
+        <p class="sidebar-brand-title">Marcas:</p>
+        <select [class]="mode === 'filter' ? 'brands-items filter-disable' : 'brands-items' " [(ngModel)]="indexBrand"  (change)="saveBrandsRef()" [disabled]="mode === 'filter' ? true : false ">
+            <option></option>
+            <option [value]="i" *ngFor="let b of menu.brands; let i = index;">{{b.name}}</option>
+        </select>
+
+        <p class="sidebar-types-title">Tipos:</p>
+        <select [class]="mode === 'filter' ? 'types-items filter-disable' : 'types-items' " [(ngModel)]="indexType" (change)="saveTypesRef()" [disabled]="mode === 'filter' ? true : false ">
+            <option></option>
+            <option [value]="i" *ngFor="let t of menu.types; let i = index;">{{t.type}}</option>
+        </select>
+        
+        <input 
+            type="submit" 
+            [value]="mode === 'filter' ? 'Cancelar busqueda': 'Buscar'" 
+            [class]="this.btnEnable ? 'filter-enable filter-btn' :  'filter-disable filter-btn' " 
+            [disabled]="!brandsRef && !typesRef" (click)="mode === 'filter' ? cancelFilter() : filterOnClick()"
+        >
+    </div>
+</div>

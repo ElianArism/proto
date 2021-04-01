@@ -1,18 +1,31 @@
 <nav class="nav">
 
-    <div class="logo">
-        <div class="logo-title">
-            <h1>Fz Indumentaria</h1>
-        </div>
-    </div>    
+    
+    <h1 class="logo-title">
+        <a routerLink="/home">
+            Fz Indumentaria
+        </a>
+    </h1>
 
-    <form class="search-form">
-        <input class="input-text" type="text" placeholder="Buscar prenda...">
-        <input class="input-submit" type="submit">
+
+    <form class="search-form" [class.hidden]="!showSearchEngine">
+        <input 
+            [class]="_search ? 'input-text input-text-readonly' : 'input-text'" 
+            type="text" 
+            placeholder="Buscar prenda por marca, tipo, nombre..." 
+            (keypress.enter)="search($event, iSearch.value)" 
+            [readOnly]="_search"
+            #iSearch
+        >   
+        <input 
+            class="input-submit" 
+            type="submit" [value]="_search ? 'Cancelar' : 'Buscar'" 
+            (click)="_search ? cancelSearch() : search($event, iSearch.value)"
+        >
     </form>
     
-    <div class="social">
-        <p><i class="fas fa-map-marker-alt"></i> Jujuy 840. Resistencia Chaco</p>
-    </div>
+
+    <p class="social"><i class="fas fa-map-marker-alt"></i> Jujuy 840. Resistencia Chaco</p>
+
 </nav>
 

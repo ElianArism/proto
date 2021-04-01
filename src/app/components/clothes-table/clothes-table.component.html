@@ -15,9 +15,6 @@
         Genero
     </div>
     <div class="col_h">
-        Stock
-    </div>
-    <div class="col_h">
         Talles
     </div>
     <div class="col_h">
@@ -39,13 +36,27 @@
         <div class="col">{{c.brand.name}}</div>
         <div class="col">{{c.type.type}}</div>
         <div class="col">{{c.gender}}</div>
-        <div class="col">{{c.stock}}</div>
         <ul class="col sizes">
-            <li *ngFor="let s of c.sizes" [class]="s.avaible ? 'avaible' : '' ">{{s.size}} </li>
+            <li *ngFor="let s of c.sizes; let i = index" [class]="s.avaible ? 'avaible' : '' "> 
+                Talle: {{s.size.size}} 
+                <br>
+                Stock: {{s.stock}} 
+            </li>
         </ul>
         <div class="col">{{ c.price | currency:'AR$' }}</div>
         <div class="col">{{ c.active ? 'Prenda disponible' : 'Prenda desactivada' }}</div>
-        <div class="col"><i class="far fa-edit" (click)="updateClothes(c)"></i>  <i class="far fa-trash-alt" (click)="deleteClothes(c)"></i></div>
+        <div class="col">
+            <i class="far fa-edit" (click)="updateClothes(c)"></i>  
+            <i [class]="c.active ? 'far fa-trash-alt' : 'far fa-check-circle'" (click)=" c.active ? deleteClothes(c) : activateClothes(c)"></i>
+        </div>
     </div>
 
 </article>
+
+
+<app-sidebar class="sidebar-mobile" 
+(brandsRef)="brandsRef = $event;" 
+(typesRef)="typesRef = $event;" 
+(cancelFilterEvent)="cancelFilter()"
+(onFilterEvent)="filterOnClick()"
+></app-sidebar>

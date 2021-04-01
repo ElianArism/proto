@@ -18,6 +18,9 @@ export class TypesService {
     return this._httpClient.get(`${this.url}/types`)
       .pipe(
         map((res:{ok: boolean, types: any[]}) => {
+          res.types = res.types.map(t => {
+            return {active: false, ...t};
+          });
           return res.types;
         })
       ); 

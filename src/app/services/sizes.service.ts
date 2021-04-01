@@ -19,7 +19,7 @@ export class SizesService {
     return this._httpClient.get(`${this.url}/sizes`)
       .pipe(
         map((res:{ok: boolean, sizes: any[]}) => {
-          return res.sizes;
+         return res.sizes;
         })
       ); 
   }

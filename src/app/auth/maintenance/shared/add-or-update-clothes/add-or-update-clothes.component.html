@@ -1,5 +1,6 @@
 <article class="container">
-    <div class="form-container">
+    <app-spinner-2 *ngIf="!documentReady;"></app-spinner-2>
+    <div class="form-container" *ngIf="documentReady">
         <p class="title">{{mode === 'add' ? 'Agregar una prenda' : clothesRef ? 'Actualizar Prenda' : 'Cargando...'}}</p>
         
         <form 
@@ -33,9 +34,6 @@
                 <option [value]="t._id" *ngFor="let t of typesList">{{t.type}}</option>
             </select>    
             
-            <label class="input-label" for="stock">Stock: </label>
-            <input name="stock" type="text" formControlName="stock">
-            
             <label class="input-label" for="price">Precio: </label>
             <input name="price" type="text" formControlName="price">
             
@@ -44,13 +42,14 @@
                 <option value="null"></option>
                 <option value="man">Hombre</option>
                 <option value="woman">Mujer</option>
-                <option value="both">Ambos</option>
             </select>
             
             <label class="input-label" for="sizes">Seleccione los talles disponibles:</label>
             <ul class="sizes-list">
                 <div class="container-size" *ngFor="let s of sizesList; let i = index">
-                    <input type="checkbox" [value]="s._id" name="sizes" (change)="onCheckChange($event)" class="checkbox" #size><label [for]="'sizes'+1">{{s.size}}</label>
+                        <p data-id="{{s._id}}">{{s.size}}</p>
+                        <input min="0" type="number" placeholder="stock..." [value]="s.temporalStock ? s.temporalStock : 0" class="stock" #stock>
+                        <button #btnSizes (click)="addSizeToList($event, s, stock.value)">{{s.opAvailable ? 'Elegido': 'Elegir'}}</button>  
                 </div>
             </ul>
           

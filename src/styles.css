@@ -1,14 +1,19 @@
 /* Global CSS Files */
+:root {
+    --bg-color: #f16363;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
+
 input, button {
     outline: none;  
 }   
-body {
+html, body {
     background-color: #f1f8ff;
     height: 100vh;
     width: 100%;
@@ -18,4 +23,37 @@ body {
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select: none;
+}
+
+
+.fadeIn {
+    animation-duration: 300ms;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.fadeOut {
+    animation-duration: 300ms;
+    animation-name: fadeOut;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

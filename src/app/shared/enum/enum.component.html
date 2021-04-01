@@ -1,5 +1,7 @@
 <div class="enum-container">
     <ul class="enum-list">
-        <div class="enum-li-dinamic" #enumList></div>
+        <span class="list-btn"><a (click)="previousPage(-7)">Anterior</a></span>
+        <span class="current-enum">{{currentPage}}</span>
+        <span class="list-btn"><a (click)="nextPage(7)">Siguiente</a></span>
     </ul>
 </div>

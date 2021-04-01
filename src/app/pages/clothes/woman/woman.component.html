@@ -1,23 +1,54 @@
 <article class="container">
 
+    <app-sidebar class="sidebar-mobile" 
+        (brandsRef)="brandsRef = $event;" 
+        (typesRef)="typesRef = $event;" 
+        (cancelFilterEvent)="cancelFilter()"
+        (onFilterEvent)="filterOnClick()"
+        ></app-sidebar>
+
     <aside class="sidebar">
-        <app-filter [show]="''" class="filter" style="transition: all 500ms"></app-filter>
+        <div class="sidebar-container">
+            <p class="sidebar-title">Filtros</p>  
+            <hr class="sidebar-title-line">
+            <p class="sidebar-brand-title">Marcas:</p>
+    
+            <span class="brands-items" *ngFor="let b of menu.brands">
+                <a (click)="saveBrandsRef(b)">{{b.name}}</a>
+                <i  (click)="b.active = false; brandsRef = null" class="far fa-times-circle" *ngIf="b.active"></i>
+            </span>
+            
+            <p class="sidebar-types-title">Tipos:</p>
+    
+            <span class="types-items" *ngFor="let t of menu.types">
+                <a  (click)="saveTypesRef(t)">{{t.type}}</a>
+                <i  (click)="t.active = false; typesRef = null" class="far fa-times-circle" *ngIf="t.active"></i>
+            </span>
+            
+            <input 
+                type="submit" 
+                [value]="mode === 'filter' ? 'Cancelar busqueda': 'Buscar'" 
+                [class]="this.btnEnable ? 'filter-enable filter-btn' :  'filter-disable filter-btn' " 
+                [disabled]="!brandsRef && !typesRef" (click)="mode === 'filter' ? cancelFilter() : filterOnClick()"
+            >
+        </div>
     </aside>
 
     <ul class="items-container">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+        <app-spinner *ngIf="spinner" class="spinner"></app-spinner>
+        <ng-container *ngIf="!spinner">
+            
+            <ng-container *ngFor="let c of clothesList;">
+                <app-card 
+                    *ngIf="c.active"
+                    [clothesId]="c._id"
+                    [clothes]="c"
+                ></app-card>
+            </ng-container>
+            
+        </ng-container>
+        
     </ul>
-</article>
 
-
-    
+    <app-enum class="enum"></app-enum>
+</article>    

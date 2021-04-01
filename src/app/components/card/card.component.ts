@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { data } from '../../interfaces/example-data';
+import Clothes from 'src/app/interfaces/clothes.interface';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
-  public exampleCard = data;
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+export class CardComponent {
+  @Input() clothesId: string; 
+  @Input() clothes: Clothes;
+  constructor(private router: Router) {}
 
   redirectDetail() {
-    this.router.navigateByUrl('home/clothes/detail/1');
+    this.router.navigateByUrl(`home/clothes/detail/${this.clothesId}`);
   }
 
 }

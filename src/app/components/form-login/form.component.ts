@@ -68,9 +68,10 @@ export class FormComponent implements OnDestroy, OnInit {
             this.activeSpinner = false;
           }, (err) => {
             Swal.fire('No se encontro un administrador con ese correo', '', 'error');
+            this.activeSpinner = false;
           });
-
         } else {
+          this.activeSpinner = false;
           return Swal.fire('Ingrese un email valido', '', 'error');
         }
       }
@@ -80,7 +81,6 @@ export class FormComponent implements OnDestroy, OnInit {
 
   changePassword(e: Event) {
     e.preventDefault();
-    console.log(this.loginForm.value)
     this._adminService.changePassword(this.loginForm.value).subscribe((res: {ok: boolean, msg: string}) => {
       Swal.fire(`Su contraseña fue actualizada`, '', 'success');
       this.router.navigateByUrl('/auth/login');

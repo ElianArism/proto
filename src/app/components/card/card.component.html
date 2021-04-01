@@ -1,12 +1,12 @@
 <li (click)="redirectDetail()">
     <div class="card">
         <picture class="card-img">
-            <img [src]="exampleCard.img" alt="">
+            <img [src]="clothes.img.path" alt="">
         </picture>
         <div class="card-info">
-            <p class="card-title">{{exampleCard.type}} {{exampleCard.brand}}</p>
+            <p class="card-title">{{clothes.type.type}} {{clothes.brand.name}}</p>
             <hr class="card-hr">
-            <p class="card-price">{{exampleCard.price | currency: 'AR$'}}</p>
+            <p class="card-price">{{clothes.price | currency: 'AR$'}}</p>
         </div>
     </div>
 </li>

@@ -16,9 +16,6 @@ export class HeaderComponent implements OnDestroy {
     this._titleSub = this._helpersService.getRouterData().subscribe(({title}) => document.title = `${title}`);
   }
 
-  ngOnInit(): void {
-  }
-
   logout():void {
     this._adminService.logout(); 
     this._router.navigateByUrl('/home'); 

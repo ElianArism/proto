@@ -87,7 +87,6 @@ export class ConfigZoneAdminComponent implements OnInit{
       if(res.isConfirmed) {
         this._adminService.activateOrDeactivateAdmin(admin._id)
           .subscribe(res => {
-            console.log(res);
             Swal.fire('Se deshabilito al administrador', `<p>Correo: ${res.adminUpdated.email}</p>`, 'success');
             this.getAdmins();
           }, (err: any) => {
@@ -97,7 +96,6 @@ export class ConfigZoneAdminComponent implements OnInit{
       } else if (res.isDenied) {
         this._adminService.deleteAdmins(admin._id)
           .subscribe(res => {
-            console.log(res);
             Swal.fire('Se elimino al administrador', `<p>Correo: ${res.adminDeleted.email}</p>`, 'success');
             this.getAdmins();
           }, (err: any) => {

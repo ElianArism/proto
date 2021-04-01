@@ -26,7 +26,6 @@ export class BrandsAdminComponent implements OnInit {
   getBrands() {
     this._brandService.getBrands()
       .subscribe((brands: Brand[]) => {
-        console.log(brands)
         this.brandsList = brands; 
       }, (err: any) => {
         Swal.fire('Ocurrio un error', `<p>${err.error.msg}</p>`, 'error'); 

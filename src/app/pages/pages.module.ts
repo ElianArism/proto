@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
@@ -10,6 +10,8 @@ import { MenComponent } from './clothes/men/men.component';
 import { WomanComponent } from './clothes/woman/woman.component';
 import { PagesComponent } from './pages.component';
 import { ClothesDetailsComponent } from './clothes/clothes-details/clothes-details.component';
+import { ClothesSoldComponent } from './clothes/clothes-sold/clothes-sold.component';
+import { ClothesFailureComponent } from './clothes/clothes-failure/clothes-failure.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ClothesDetailsComponent } from './clothes/clothes-details/clothes-detai
     MainComponent,
     MenComponent,
     WomanComponent,
-    ClothesDetailsComponent
+    ClothesDetailsComponent,
+    ClothesSoldComponent,
+    ClothesFailureComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +34,7 @@ import { ClothesDetailsComponent } from './clothes/clothes-details/clothes-detai
     MainComponent,
     MenComponent,
     WomanComponent,
-    ClothesDetailsComponent
+    ClothesDetailsComponent,
   ]
 })
 export class PagesModule { }
